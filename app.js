@@ -1,5 +1,5 @@
 const express = require('express');
-const dotenv = require('dotenv');
+require('dotenv').config({path:'./env/.env'});
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -15,8 +15,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-//set variantes entorno
-dotenv.config({path:'./env/.env'});
+
 
 //cookies
 app.use(cookieParser());
