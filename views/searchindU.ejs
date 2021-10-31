@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unidadesind</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">INFO-DOC</a>
+
+            <!-- Boton para el menu movil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Mostrar / Ocultar Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="/login" class="nav-link">SALIR</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <table class="table table-borderer table-striped text-center mt-4"> 
+            <t-head>
+                <tr class="bg-primary text-white">
+                    <th scope="col">ID</th>
+                    <th scope="col">PATENTE</th>
+                    <th scope="col">MODELO</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </t-head>
+            <t-body>
+                <% if (unid) {%>
+                    <tr>
+                        <td><%=unid.id %></td>
+                        <td><%=unid.patente %></td>
+                        <td><%=unid.modelo %></td>
+                        <td>
+                            <a href="/unidadEdit/<%=unid.id %>" class="btn btn-lg btn-primary">EDITAR</a>
+                            <a href="/unidadEliminar/<%=unid.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </t-body>
+        
+        
+        </table>
+    </div>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+

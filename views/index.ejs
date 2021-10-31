@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boot</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">INFO-DOC</a>
+
+            <!-- Boton para el menu movil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Mostrar / Ocultar Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="/login" class="nav-link">SALIR</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container-fluid bg-primary pb-3">
+        <div class="row pb-10">
+
+            <div class="dropdown col-12 d-grid gap-2 d-lg-inline gap-10 text-center ">
+                <div class="btn-group position-relative">
+                    <a href="/searchResult" class="btn btn-lg btn-outline-light text-light ">Choferes</a>
+                    <button class="btn btn-outline-light text-light dropdown-toggle" type="button" id="dropdown-1"
+                        data-bs-toggle="dropdown" aria-expanded="false"></button>
+
+                    <ul class="dropdown-menu position-absolute top-0 start-0" aria-labelledby="dropdown-1 ">
+                        <li class="dropdown-item text-dark">
+                            <form action="/searchind" method="POST">
+
+                                <h3>BUSCAR</h3>
+                                <input class="form-control mr-sm-2" type="text" id="user" name="user"
+                                    placeholder="Search">
+
+
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </form>
+                        </li>
+                        <li class="dropdown-item text-dark">
+                            <a href="/addChofer" class="btn btn-lg btn-outline-primary text-primary ">Agregar Chofer</a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a href="/searchResultU" class="btn btn-lg btn-outline-light text-light ">Unidades</a>
+                    <button class="btn btn-outline-light text-light dropdown-toggle" type="button" id="dropdown-2"
+                        data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown-2">
+                        <li class="dropdown-item text-dark">
+                            
+                            <form class="form-inline" action="/searchindU" method="POST">
+                                <h3>BUSCAR</h3>
+                                <input class="form-control mr-sm-2" id="unid" name="unid" type="text" placeholder="Search">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </form>
+                        </li>
+                       
+                        <li class="dropdown-item text-dark">
+                            <a href="/addUnidad" class="btn btn-lg btn-outline-primary text-primary ">Agregar Unidad</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

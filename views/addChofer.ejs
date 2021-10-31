@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Alta Chofer</title>
+
+
+
+
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+    <!-- Custom styles for this template -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">INFO-DOC</a>
+
+            <!-- Boton para el menu movil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Mostrar / Ocultar Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="/login" class="nav-link">SALIR</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <main class="form-signin text-center shadow-lg p-3 mb-3">
+        <form action="/addChofer" method="POST">
+
+            <h1 class="h3 mb-3 fw-normal">ALTA CHOFER</h1>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo">
+                <label for="name">Nombre completo</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="dni" name="dni" placeholder="dni">
+                <label for="user">DNI</label>
+            </div>
+
+
+
+            <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Alta</button>
+            <a href="/addChofer" type="button" class="w-100 btn btn-lg btn-primary">Cancelar</a>
+        </form>
+        <br>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </main>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
