@@ -1,7 +1,7 @@
 const express = require('express');
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
-// https://github.com/martinterzi/infosys.git
+
 const app = express();
 const port = process.env.PORT || 4000;
 
