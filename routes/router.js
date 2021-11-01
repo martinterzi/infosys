@@ -5,7 +5,7 @@ const conexion = require('../database/db');
 
 const authController = require('../controllers/authController');
 
-router.get('/', (req, res) => {
+router.get('/', authController.checkAutenticacion, (req, res) => {
     
     res.render('index');
 });
@@ -18,10 +18,10 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-router.get('/addChofer', (req, res) => {
+router.get('/addChofer', authController.checkAutenticacion, (req, res) => {
     res.render('addChofer');
 });
-router.get('/addUnidad', (req, res) => {
+router.get('/addUnidad', authController.checkAutenticacion,(req, res) => {
     res.render('addUnidad');
 });
 /*

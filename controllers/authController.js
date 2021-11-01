@@ -282,3 +282,25 @@ exports.choferEliminar =  (req, res) => {
    
  
 };
+
+exports.checkAutenticacion = async (req, res, next) =>{
+
+    if(req.cookiesOptions.jwt){
+       try {
+           const decodificada = await promisify(jwt.verify)(req.cookiesOptions.jwt, process.env.JWT_SECRETO)
+           conDb.query('SELECT FROM users WHERE id = ?', [decodificada.id], (error, results)=>{
+               if (!results) {
+                   return next()}
+                   req.user= results[0]
+                   return next()
+           })
+       } catch (error){
+           console.log(error)
+           return next()
+       }
+    } else{
+         res.redirect('/login')
+         next()
+    }
+
+}
