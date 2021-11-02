@@ -7,7 +7,7 @@ const port = process.env.PORT || 4000;
 
 //motor de plantilla
 app.set('view engine', 'ejs');
-
+app.set('views',__dirname+ '/views');
 
 // set carpeta publica
 app.use(express.static('public'));
