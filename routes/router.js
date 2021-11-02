@@ -18,10 +18,10 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-router.get('/addChofer', authController.checkAutenticacion, (req, res) => {
+router.get('/addChofer', (req, res) => {
     res.render('addChofer');
 });
-router.get('/addUnidad', authController.checkAutenticacion,(req, res) => {
+router.get('/addUnidad',(req, res) => {
     res.render('addUnidad');
 });
 /*
@@ -32,7 +32,7 @@ router.get('/searchindU', (req, res) => {
 
 
 //ruta de metodos 
-router.get('/', authController.checkAutenticacion)
+
 router.post('/register', authController.register);
 router.post('/addChofer', authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
