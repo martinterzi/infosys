@@ -5,7 +5,7 @@ const conexion = require('../database/db');
 
 const authController = require('../controllers/authController');
 
-router.get('/', authController.checkAutenticacion, (req, res) => {
+router.get('/', (req, res) => {
     
     res.render('index');
 });
