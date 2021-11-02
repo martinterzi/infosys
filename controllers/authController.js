@@ -291,7 +291,7 @@ exports.checkAutenticacion = async (req, res, next) =>{
            conDb.query('SELECT * FROM users WHERE id = ?', [decodificada.id], (error, results)=>{
                if (!results) {
                    return next()}
-                   req.user= results[0]
+                   req.user= results[0].user
                    return next()
            })
        } catch (error){
