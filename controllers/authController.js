@@ -106,7 +106,7 @@ exports.buscar =  (req, res) => {
         if (error){
             throw error;
         } else{
-             res.render('searchResult', {results:results});
+             res.render('searchResult', {user:results});
         }       
     })
 };
