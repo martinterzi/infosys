@@ -25,9 +25,7 @@ router.get('/addUnidad',(req, res) => {
     res.render('addUnidad');
 });
 
-router.get('/searchind', (req, res) => {
-    res.render('searchind');
-});
+
 
 
 
