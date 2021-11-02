@@ -123,15 +123,14 @@ exports.buscarU =  (req, res) => {
 
 exports.buscarInd =  (req, res) => {
     try {
-        const user = req.body.user;
-        console.log(user)
-        conDb.query('SELECT * FROM choferes WHERE nombre = ?',[req.body.user], (error, results) => {
+        
+        conDb.query('SELECT * FROM choferes WHERE nombre = ?',[req.body.name], (error, results) => {
             if (error){
                 throw error;
             } else{
                 console.log(results)
                 console.log(results[0])
-                 res.render('searchInd', {user:results[0]});
+                 res.render('searchInd', {chof:results[0]});
             }       
         })
     } catch (error) {

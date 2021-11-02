@@ -37,14 +37,14 @@
                 </tr>
             </t-head>
             <t-body>
-                <% if (user) {%>
+                <% if (chof) {%>
                     <tr>
-                        <td><%=user.id %></td>
-                        <td><%=user.nombre %></td>
-                        <td><%=user.dni %></td>
+                        <td><%=chof.id %></td>
+                        <td><%=chof.nombre %></td>
+                        <td><%=chof.dni %></td>
                         <td>
-                            <a href="/choferEdit/<%=user.id %>" class="btn btn-lg btn-primary">EDITAR</a>
-                            <a href="/choferEliminar/<%=user.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
+                            <a href="/choferEdit/<%=chof.id %>" class="btn btn-lg btn-primary">EDITAR</a>
+                            <a href="/choferEliminar/<%=chof.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
                         </td>
                     </tr>
                     <% } %>
