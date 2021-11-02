@@ -5,7 +5,7 @@ const conexion = require('../database/db');
 
 const authController = require('../controllers/authController');
 
-router.get('/', authController.checkAutenticacion, (req, res) => {
+router.get('/', (req, res) => {
     
     res.render('index');
 });
@@ -32,6 +32,7 @@ router.get('/searchindU', (req, res) => {
 
 
 //ruta de metodos 
+router.get('/', authController.checkAutenticacion)
 router.post('/register', authController.register);
 router.post('/addChofer', authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
