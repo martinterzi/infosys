@@ -11,13 +11,13 @@ exports.register = async (req, res) => {
         const name = req.body.name;
         const user = req.body.user;
         const pass = req.body.pass;
-        let passHash = await bcryptjs.hash(pass, 8);
+       // let passHash = await bcryptjs.hash(pass, 8);
         console.log(name + user + pass);
-        console.log(passHash);
-        conDb.query('INSERT INTO users SET ?', { user: user, name: name, pass: passHash }, (err, result) => {
+      //  console.log(passHash);
+        conDb.query('INSERT INTO users SET ?', { user: user, name: name, pass: pass }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
-                console.log(passHash);
+                console.log(pass);
             }
             res.redirect('/');
         })
@@ -68,27 +68,17 @@ exports.addUnidad =  (req, res) => {
 
 };
 
-exports.login = async (req, res) => {
+exports.login =  (req, res) => {
     try {
         const user = req.body.user;
         const pass = req.body.pass;
 
         conDb.query('SELECT * FROM users WHERE user = ?', [user], async (error, results) => {
-            if (results.length == 0 || !(await bcryptjs.compare(pass, results[0].pass))) {
+            if (results.length == 0 ) {
                 console.log('pass incorrecto')
             } else {
                 console.log('pass ok')
-                const id = results[0].id;
-                const token = jwt.sign({ id: id }, process.env.JWT_SECRETO, {
-                    expiresIn: process.env.JWT_TIEMPO_EXPIRA,
-
-                })
-                console.log(token);
-                const cookiesOptions = {
-                    expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
-                    httpOnly: true
-                }
-                res.cookie('jwt', token, cookiesOptions)
+              
                 res.render('index');
             }
         })
