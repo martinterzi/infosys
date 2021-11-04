@@ -73,7 +73,7 @@ exports.login =  (req, res) => {
         const user = req.body.user;
         const pass = req.body.pass;
 
-        conDb.query('SELECT * FROM users WHERE user = ?', [user], async (error, results) => {
+        conDb.query('SELECT * FROM users WHERE user = ?', [user],  (error, results) => {
             if (results.length == 0 ) {
                 console.log('pass incorrecto')
             } else {
