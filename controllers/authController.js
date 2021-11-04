@@ -6,7 +6,7 @@ const promisify = require('util');
 const { query } = require('express');
 
 //metodo para registrar
-exports.register = async (req, res) => {
+exports.register =  (req, res) => {
     try {
         const name = req.body.name;
         const user = req.body.user;
@@ -271,7 +271,7 @@ exports.choferEliminar =  (req, res) => {
    
  
 };
-
+/*
 exports.checkAutenticacion = async (req, res, next) =>{
 
     if(req.cookiesOptions.jwt){
@@ -292,4 +292,4 @@ exports.checkAutenticacion = async (req, res, next) =>{
          next()
     }
 
-}
+}*/
