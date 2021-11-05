@@ -32,10 +32,10 @@ exports.addChofer =  (req, res) => {
         const name = req.body.name;
         const dni = req.body.dni;
         const vtolic = req.body.vtolic;
-        console.log(name);
-        console.log(dni);
+        const vtopsico = req.body.vtopsico;
+        const vtopel = req.body.vtopel;
         
-        conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic }, (err, result) => {
+        conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic, vtopsico: vtopsico, vtopel: vtopel }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
@@ -219,9 +219,10 @@ exports.actualizarChofer =  (req, res) => {
         const nombre = req.body.name;
         const dni = req.body.dni;
         const vtolic = req.body.vtolic;
+           const vtopsico = req.body.vtopsico;
+        const vtopel = req.body.vtopel; 
         
-        
-        conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni, vtolic: vtolic}, id], (err, result) => {
+        conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni, vtolic: vtolic, vtopsico: vtopsico, vtopel: vtopel}, id], (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
