@@ -33,6 +33,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">NOMBRE</th>
                     <th scope="col">DNI</th>
+                    <th scope="col">VTO LIC</th>
                     <th scope="col">ACCIONES</th>
                 </tr>
             </t-head>
@@ -42,6 +43,7 @@
                         <td><%=user.id %></td>
                         <td><%=user.nombre %></td>
                         <td><%=user.dni %></td>
+                        <td><%=user.vtolic %></td>
                         <td>
                             <a href="/choferEdit/<%=user.id %>" class="btn btn-lg btn-primary">EDITAR</a>
                             <a href="/choferEliminar/<%=user.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>

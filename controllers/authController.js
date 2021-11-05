@@ -31,10 +31,11 @@ exports.addChofer =  (req, res) => {
     try {
         const name = req.body.name;
         const dni = req.body.dni;
+        const vtolic = req.body.vtolic;
         console.log(name);
         console.log(dni);
         
-        conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni }, (err, result) => {
+        conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
