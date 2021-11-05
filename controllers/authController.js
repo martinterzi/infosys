@@ -218,10 +218,10 @@ exports.actualizarChofer =  (req, res) => {
         const id = req.body.id;
         const nombre = req.body.name;
         const dni = req.body.dni;
-        console.log(nombre);
-        console.log(dni);
+        const vtolic = req.body.vtolic;
         
-        conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni}, id], (err, result) => {
+        
+        conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni, vtolic: vtolic}, id], (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
