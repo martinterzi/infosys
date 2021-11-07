@@ -114,8 +114,8 @@ exports.buscarU =  (req, res) => {
 
 exports.buscarInd =  (req, res) => {
     try {
-        
-        conDb.query('SELECT * FROM choferes WHERE nombre LIKE = ?',[req.body.name], (error, results) => {
+        //conDb.query('SELECT * FROM choferes WHERE nombre LIKE = ?',[req.body.name]
+        conDb.query('SELECT * FROM choferes WHERE nombre LIKE "%req.body.name%"', (error, results) => {
             if (error){
                 throw error;
             } else{
