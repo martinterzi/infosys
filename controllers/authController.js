@@ -121,7 +121,12 @@ exports.buscarInd =  (req, res) => {
             } else{
                 console.log(results)
                 console.log(results[0])
-                 res.render('searchind', {chof:results[0]});
+                if(results){
+                    res.render('searchind', {results:results});
+                } else{
+                    res.redirect('/');
+                }
+                
             }       
         })
     } catch (error) {

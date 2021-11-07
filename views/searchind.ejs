@@ -40,7 +40,7 @@
                 </tr>
             </t-head>
             <t-body>
-                <% if (chof) {%>
+                <% results.forEach((chof)=> {%>
                     <tr>
                         <td><%=chof.id %></td>
                         <td><%=chof.nombre %></td>
@@ -53,7 +53,7 @@
                             <a href="/choferEliminar/<%=chof.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
                         </td>
                     </tr>
-                    <% } %>
+                    <% }) %>
             </t-body>
         
         
