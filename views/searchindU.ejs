@@ -37,7 +37,7 @@
                 </tr>
             </t-head>
             <t-body>
-                <% if (unid) {%>
+                <% results.forEach((unid)=> {%>
                     <tr>
                         <td><%=unid.id %></td>
                         <td><%=unid.patente %></td>
@@ -47,7 +47,7 @@
                             <a href="/unidadEliminar/<%=unid.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
                         </td>
                     </tr>
-                    <% } %>
+                    <% }) %>
             </t-body>
         
         

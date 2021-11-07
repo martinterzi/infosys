@@ -140,13 +140,13 @@ exports.buscarIndU =  (req, res) => {
     try {
         const pat = req.body.unid;
         console.log(pat)
-        conDb.query('SELECT * FROM unidades WHERE patente = ?',[req.body.unid], (error, results) => {
+        conDb.query("SELECT * FROM unidades WHERE patente LIKE " + conDb.escape('%'+req.body.unid+'%'), (error, results) => {
             if (error){
                 throw error;
             } else{
                 console.log(results)
                 console.log(results[0])
-                 res.render('searchindU', {unid:results[0]});
+                 res.render('searchindU', {results:results});
             }       
         })
     } catch (error) {
