@@ -27,37 +27,38 @@
 
     </nav>
     <div class="container-fluid col">
-        <table class="table table-borderer table-striped text-center mt-4"> 
-            <t-head>
-                <tr class="bg-primary text-white">
-                    <th scope="col">ID</th>
-                    <th scope="col">NOMBRE</th>
-                    <th scope="col">DNI</th>
-                    <th scope="col">VTO LIC</th>
-                    <th scope="col">VTO PSICO</th>
-                    <th scope="col">VTO CURSO</th>
-                    <th scope="col">ACCIONES</th>
-                </tr>
-            </t-head>
-            <t-body>
-                <% results.forEach((user)=> {%>
-                    <tr>
-                        <td><%=user.id %></td>
-                        <td><%=user.nombre %></td>
-                        <td><%=user.dni %></td>
-                        <td><%=user.vtolic %></td>
-                        <td><%=user.vtopsico %></td>
-                        <td><%=user.vtopel %></td>
-                        <td>
-                            <a href="/choferEdit/<%=user.id %>" class="btn btn-lg btn-primary">EDITAR</a>
-                            <a href="/choferEliminar/<%=user.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
-                        </td>
+        <div class="table-responsive">
+            <table class="table table-borderer table-striped text-center mt-4"> 
+                <t-head>
+                    <tr class="bg-primary text-white">
+                        <th scope="col">ID</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col">VTO LIC</th>
+                        <th scope="col">VTO PSICO</th>
+                        <th scope="col">VTO CURSO</th>
+                        <th scope="col">ACCIONES</th>
                     </tr>
-                    <% }) %>
-            </t-body>
-        
-        
-        </table>
+                </t-head>
+                <t-body>
+                    <% results.forEach((user)=> {%>
+                        <tr>
+                            <td><%=user.id %></td>
+                            <td><%=user.nombre %></td>
+                            <td><%=user.dni %></td>
+                            <td><%=user.vtolic %></td>
+                            <td><%=user.vtopsico %></td>
+                            <td><%=user.vtopel %></td>
+                            <td>
+                                <a href="/choferEdit/<%=user.id %>" class="btn btn-lg btn-primary">EDITAR</a>
+                                <a href="/choferEliminar/<%=user.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </t-body>
+            </table>
+        </div>
+       
     </div>
     
 
