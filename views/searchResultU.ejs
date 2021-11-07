@@ -27,31 +27,31 @@
 
     </nav>
     <div class="container">
-        <table class="table table-borderer table-striped text-center mt-4"> 
-            <t-head>
-                <tr class="bg-primary text-white">
-                    <th scope="col">ID</th>
-                    <th scope="col">PATENTE</th>
-                    <th scope="col">MODELO</th>
-                    <th scope="col">ACCIONES</th>
-                </tr>
-            </t-head>
-            <t-body>
-                <% results.forEach((unid)=> {%>
-                    <tr>
-                        <td><%=unid.id %></td>
-                        <td><%=unid.patente %></td>
-                        <td><%=unid.modelo %></td>
-                        <td>
-                            <a href="/unidadEdit/<%=unid.id %>" class="btn btn-lg btn-primary">EDITAR</a>
-                            <a href="/unidadEliminar/<%=unid.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
-                        </td>
+        <div class="table-responsive">
+            <table class="table table-borderer table-striped text-center mt-4"> 
+                <t-head>
+                    <tr class="bg-primary text-white">
+                        <th scope="col">ID</th>
+                        <th scope="col">PATENTE</th>
+                        <th scope="col">MODELO</th>
+                        <th scope="col">ACCIONES</th>
                     </tr>
-                    <% }) %>
-            </t-body>
-        
-        
-        </table>
+                </t-head>
+                <t-body>
+                    <% results.forEach((unid)=> {%>
+                        <tr>
+                            <td><%=unid.id %></td>
+                            <td><%=unid.patente %></td>
+                            <td><%=unid.modelo %></td>
+                            <td>
+                                <a href="/unidadEdit/<%=unid.id %>" class="btn btn-lg btn-primary">EDITAR</a>
+                                <a href="/unidadEliminar/<%=unid.id %>" class="btn btn-lg btn-primary">ELIMINAR</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </t-body>
+            </table>
+        </div>
     </div>
     
 
