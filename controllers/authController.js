@@ -295,6 +295,28 @@ exports.choferEliminar =  (req, res) => {
    
  
 };
+
+exports.choferMas =  (req, res) => {
+    try {
+        const id = req.params.id;
+        console.log(id)
+        conDb.query('SELECT * FROM choferes WHERE id = ?',[id], (error, results) => {
+            if (error){
+                throw error;
+            } else{
+                console.log(results)
+                console.log(results[0])
+                 res.render('choferEdit', {chofer:results[0]});
+            }       
+        })
+    } catch (error) {
+        console.log(error)
+    }
+   
+ 
+};
+
+
 /*
 exports.checkAutenticacion = async (req, res, next) =>{
 

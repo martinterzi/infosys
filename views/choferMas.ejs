@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>InfoChofer</title>
+
+
+
+
+
+    <!-- Bootstrap core CSS -->
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+</head>
+
+<body class="text-center">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">INFO-DOC</a>
+
+            <!-- Boton para el menu movil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Mostrar / Ocultar Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="/login" class="nav-link">SALIR</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <% if (chofer) { %>
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h1 class="h3 mb-3 fw-normal">CHOFER</h1>
+                        </div>
+                        <div class="card-body">
+                            <form action="/actualizarChofer" method="POST">
+
+                                <input id="id" name="id" value="<%= chofer.id %>" hidden>
+                                
+                                <div class="form-floating">
+                                    <input class="form-control" id="name" name="name" value="<%= chofer.nombre %>"
+                                        placeholder="Nombre completo">
+                                    <label for="name">Nombre completo</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="dni" name="dni" value="<%= chofer.dni %>" placeholder="dni">
+                                    <label for="user">DNI</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="vtolic" name="vtolic" value="<%= chofer.vtolic %>" placeholder="00/00/0000">
+                                    <label for="user">VTO LICENCIA</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="vtopsico" name="vtopsico" value="<%= chofer.vtopsico %>" placeholder="00/00/0000">
+                                    <label for="vtopsico">VTO PSICO</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="vtopel" name="vtopel" value="<%= chofer.vtopel %>" placeholder="00/00/0000">
+                                    <label for="vtopel">VTO CURSO</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="domicilio" name="domicilio" value="<%= chofer.domicilio %>" placeholder="DIRECCION">
+                                    <label for="domicilio">DIRECCION</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="nt" name="nt" value="<%= chofer.nt %>" placeholder="N TRAMITE">
+                                    <label for="nt">TRAMITE DNI</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="fdni" name="fdni" value="<%= chofer.fdni %>" placeholder="00/00/0000">
+                                    <label for="fdni">FECHA DNI</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="fn" name="fn" value="<%= chofer.fn %>" placeholder="00/00/0000">
+                                    <label for="fn">FECHA DE NACIMIENTO</label>
+                                </div>
+                                <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">GUARDAR CAMBIOS</button>
+                                <a href="/" type="button" class="w-100 btn btn-lg btn-primary">Cancelar</a>
+            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <% } %>
+            
+
+
+
+
+
+            <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
