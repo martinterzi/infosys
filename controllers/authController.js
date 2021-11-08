@@ -306,7 +306,7 @@ exports.choferMas =  (req, res) => {
             } else{
                 console.log(results)
                 console.log(results[0])
-                 res.render('choferEdit', {chofer:results[0]});
+                 res.render('choferMas', {chofer:results[0]});
             }       
         })
     } catch (error) {
