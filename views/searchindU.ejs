@@ -32,17 +32,10 @@
                 <t-head>
                     <tr class="bg-primary text-white">
                         <th scope="col">ID</th>
-                        <th scope="col">PATENTE</th>
-                        <th scope="col">MODELO</th>
-                        <th scope="col">CHASIS</th>
-                        <th scope="col">MOTOR</th>
-                        <th scope="col">POLIZA</th>
+                        <th scope="col">PATENTE</th>                   
                         <th scope="col">VTO SEGURO</th>
                         <th scope="col">RUTA</th>
-                        <th scope="col">RTO</th>
-                        <th scope="col">V. EXTERNA</th>
-                        <th scope="col">MAS</th>
-                        <th scope="col">SPOT</th>
+                        <th scope="col">RTO</th>                        
                         <th scope="col">ACCIONES</th>
                     </tr>
                 </t-head>
@@ -51,17 +44,11 @@
                         <tr>
                             <td><%=unid.id %></td>
                             <td><%=unid.patente %></td>
-                            <td><%=unid.modelo %></td>
-                            <td><%=unid.chasis %></td>
-                            <td><%=unid.motor %></td>
-                            <td><%=unid.seguropol %></td>
                             <td><%=unid.segurovto %></td>
                             <td><%=unid.ruta %></td>
-                            <td><%=unid.rto %></td>
-                            <td><%=unid.ve %></td>
-                            <td><%=unid.mas %></td>
-                            <td><%=unid.spot %></td>
+                            <td><%=unid.rto %></td>                           
                             <td>
+                                <a href="/unidadMas/<%=unid.id %>" class="btn btn-primary">MAS INFO</a>
                                 <a href="/unidadEdit/<%=unid.id %>" class="btn btn-primary">EDITAR</a>
                                 <a href="/unidadEliminar/<%=unid.id %>" class=" btn btn-primary">ELIMINAR</a>
                             </td>

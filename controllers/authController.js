@@ -41,6 +41,7 @@ exports.addChofer =  (req, res) => {
         const vtog = req.body.vtog;
         const cuil = req.body.cuil;
         
+        
         conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic, vtopsico: vtopsico, 
             vtopel: vtopel, nt:nt, fdni:fdni, fn:fn, domicilio:domicilio, vtog:vtog, cuil:cuil }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
@@ -68,8 +69,10 @@ exports.addUnidad =  (req, res) => {
         const mas = req.body.mas;
         const ve = req.body.ve;
         const spot = req.body.spot;
+        const service = req.body.service;
         conDb.query('INSERT INTO unidades SET ?', {patente: patente, modelo: modelo, chasis: chasis, 
-            motor:motor, segurovto:segurovto, seguropol:seguropol, ruta:ruta, rto:rto, mas:mas, spot:spot, ve:ve}, (err, result) => {
+            motor:motor, segurovto:segurovto, seguropol:seguropol, ruta:ruta, rto:rto, 
+            mas:mas, spot:spot, ve:ve, service:service}, (err, result) => {
         
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
@@ -224,8 +227,11 @@ exports.actualizarUnidad =  (req, res) => {
         const rto = req.body.rto;
         const mas = req.body.mas;
         const spot = req.body.spot;
+        const ve = req.body.ve;
+        const service = req.body.service;
         conDb.query('UPDATE unidades SET ? WHERE id = ?', [{patente: patente, modelo: modelo, chasis: chasis, 
-            motor:motor, segurovto:segurovto, seguropol:seguropol, ruta:ruta, rto:rto, mas:mas, spot:spot}, id], (err, result) => {
+            motor:motor, segurovto:segurovto, seguropol:seguropol, ruta:ruta, rto:rto, 
+            mas:mas, spot:spot, service:service, ve:ve}, id], (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
