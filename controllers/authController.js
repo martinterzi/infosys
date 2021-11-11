@@ -244,7 +244,7 @@ exports.actualizarChofer =  (req, res) => {
         const nombre = req.body.name;
         const dni = req.body.dni;
         const vtolic = req.body.vtolic;
-           const vtopsico = req.body.vtopsico;
+        const vtopsico = req.body.vtopsico;
         const vtopel = req.body.vtopel; 
         
         conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni, vtolic: vtolic, vtopsico: vtopsico, vtopel: vtopel}, id], (err, result) => {
