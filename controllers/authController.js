@@ -333,6 +333,26 @@ exports.choferMas =  (req, res) => {
  
 };
 
+exports.unidadMas =  (req, res) => {
+    try {
+        const id = req.params.id;
+        console.log(id)
+        conDb.query('SELECT * FROM unidades WHERE id = ?',[id], (error, results) => {
+            if (error){
+                throw error;
+            } else{
+                console.log(results)
+                console.log(results[0])
+                 res.render('unidadMas', {unid:results[0]});
+            }       
+        })
+    } catch (error) {
+        console.log(error)
+    }
+   
+ 
+};
+
 
 /*
 exports.checkAutenticacion = async (req, res, next) =>{

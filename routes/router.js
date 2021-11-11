@@ -39,7 +39,7 @@ router.get('/searchResult', authController.buscar);
 router.get('/searchResultU', authController.buscarU);
 router.post('/searchind', authController.buscarInd);
 router.get('/choferMas/:id', authController.choferMas);
-router.get('/unidadMas/:id', authController.unidadEdit);
+router.get('/unidadMas/:id', authController.unidadMas);
 router.post('/searchindU', authController.buscarIndU);
 router.get('/choferEdit/:id', authController.choferEdit);
 router.get('/unidadEdit/:id', authController.unidadEdit);
