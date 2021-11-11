@@ -66,9 +66,10 @@ exports.addUnidad =  (req, res) => {
         const ruta = req.body.ruta;
         const rto = req.body.rto;
         const mas = req.body.mas;
+        const ve = req.body.ve;
         const spot = req.body.spot;
         conDb.query('INSERT INTO unidades SET ?', {patente: patente, modelo: modelo, chasis: chasis, 
-            motor:motor, segurovto:segurovto, seguropol:seguropol, ruta:ruta, rto:rto, mas:mas, spot:spot}, (err, result) => {
+            motor:motor, segurovto:segurovto, seguropol:seguropol, ruta:ruta, rto:rto, mas:mas, spot:spot, ve:ve}, (err, result) => {
         
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
