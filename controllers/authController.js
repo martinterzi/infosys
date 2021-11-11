@@ -246,8 +246,15 @@ exports.actualizarChofer =  (req, res) => {
         const vtolic = req.body.vtolic;
         const vtopsico = req.body.vtopsico;
         const vtopel = req.body.vtopel; 
+        const nt = req.body.nt;
+        const fdni = req.body.fdni;
+        const fn = req.body.fn;
+        const domicilio = req.body.domicilio;
+        const vtog = req.body.vtog;
+        const cuil = req.body.cuil;
         
-        conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni, vtolic: vtolic, vtopsico: vtopsico, vtopel: vtopel}, id], (err, result) => {
+        conDb.query('UPDATE choferes SET ? WHERE id = ?', [{nombre: nombre, dni: dni, vtolic: vtolic, vtopsico: vtopsico, 
+            vtopel: vtopel, nt:nt, fdni:fdni, fn:fn, domicilio:domicilio, vtog:vtog, cuil:cuil}, id], (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
