@@ -55,40 +55,78 @@
                             <form action="/actualizarChofer" method="POST">
 
                                 <input id="id" name="id" value="<%= chofer.id %>" hidden>
-                                
+
                                 <div class="form-floating">
                                     <input class="form-control" id="name" name="name" value="<%= chofer.nombre %>"
                                         placeholder="Nombre completo">
                                     <label for="name">Nombre completo</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="dni" name="dni" value="<%= chofer.dni %>" placeholder="dni">
+                                    <input class="form-control" id="dni" name="dni" value="<%= chofer.dni %>"
+                                        placeholder="dni">
                                     <label for="user">DNI</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="vtolic" name="vtolic" value="<%= chofer.vtolic %>" placeholder="00/00/0000">
+                                    <h1 class="form-control">
+                                        <%= chofer.cuil %>
+                                    </h1>
+                                    <label for="cuil">CUIL</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="vtolic" name="vtolic" value="<%= chofer.vtolic %>"
+                                        placeholder="00/00/0000">
                                     <label for="user">VTO LICENCIA</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="vtopsico" name="vtopsico" placeholder="00/00/0000">
+                                    <input type="text" class="form-control" id="vtopsico" name="vtopsico"
+                                        value="<%= chofer.vtopsico %>" placeholder="00/00/0000">
                                     <label for="vtopsico">VTO PSICO</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="vtopel" name="vtopel" placeholder="00/00/0000">
-                                    <label for="vtopel">VTO CURSO</label>
+                                    <input type="text" class="form-control" id="vtopel" name="vtopel"
+                                        value="<%= chofer.vtopel %>" placeholder="00/00/0000">
+                                    <label for="vtopel">VTO CURSO PELIGROSAS</label>
+                                </div>
+
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="vtopel" name="vtopel"
+                                        value="<%= chofer.vtog %>" placeholder="00/00/0000">
+                                    <label for="vtog">VTO CURSO GENERALES</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="vtopel" name="vtopel"
+                                        value="<%= chofer.domicilio %>" placeholder="00/00/0000">
+
+                                    <label for="domicilio">DIRECCION</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="vtopel" name="vtopel"
+                                        value="<%= chofer.nt %>" placeholder="00/00/0000">
+                                    <label for="nt">TRAMITE DNI</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="vtopel" name="vtopel"
+                                        value="<%= chofer.fdni %>" placeholder="00/00/0000">
+                                    <label for="fdni">FECHA DNI</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="vtopel" name="vtopel"
+                                        value="<%= chofer.fn %>" placeholder="00/00/0000">
+                                    <label for="fn">FECHA DE NACIMIENTO</label>
                                 </div>
                                 <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">GUARDAR CAMBIOS</button>
                                 <a href="/" type="button" class="w-100 btn btn-lg btn-primary">Cancelar</a>
-            
+
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-       
+        </div>
+
         <% } %>
-            
+
 
 
 
