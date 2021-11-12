@@ -44,9 +44,13 @@
 
     </nav>
     <main class="form-signin text-center shadow-lg p-3 mb-3">
-        <form action="/addChofer" method="POST">
+        <form action="/addChofer" method="POST" enctype="multipart/form-data">
 
             <h1 class="h3 mb-3 fw-normal">ALTA CHOFER</h1>
+            <div class="form-floating">
+                <input type="file" class="form-control-file" id="im" name="archivo" placeholder="imagen">
+                <label for="im">IMAGEN</label>
+            </div>
             <div class="form-floating">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo">
                 <label for="name">Nombre completo</label>
