@@ -11,7 +11,7 @@ var rutaAlmacen = multer.diskStorage(
         destination:function (request, file, callback){
           callback(null,'./public/images/')
         },
-       filename:function(request, file, callback){
+        filename:function(request, file, callback){
           console.log(file);
           callback(null, fecha+"_"+file.originalname)
        }
@@ -47,7 +47,7 @@ router.get('/addUnidad',(req, res) => {
 //ruta de metodos 
 
 router.post('/register', authController.register);
-router.post('/addChofer', cargar.single("arcchivo"), authController.addChofer);
+router.post('/addChofer', cargar.single("archivo"), authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
 router.post('/login', authController.login);
 router.get('/searchResult', authController.buscar);
