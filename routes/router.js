@@ -7,7 +7,6 @@ const authController = require('../controllers/authController');
 
 
 
-
 router.get('/', (req, res) => {
     
     res.render('index');
@@ -50,4 +49,22 @@ router.post('/actualizarUnidad', authController.actualizarUnidad);
 router.post('/actualizarChofer', authController.actualizarChofer);
 router.get('/unidadEliminar/:id', authController.unidadEliminar);
 router.get('/choferEliminar/:id', authController.choferEliminar);
+
+var multer = require('multer');
+var fecha = Date.now();
+
+var rutaAlmacen = multer.diskStorage(
+    {
+        destination:function(request, file, callback){
+            callback(null, './public/images/');
+        },
+        filename:function(request, file, callback){
+            console.log(file);
+            callback(null, `${fecha}_${file.originalname}`);
+        }
+    }
+);
+
+var cargar = multer({storage:rutaAlmacen});
+/* GET home page. */
 module.exports= router;
