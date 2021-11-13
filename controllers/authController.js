@@ -4,6 +4,22 @@ const bcryptjs = require('bcryptjs');
 const conDb = require('../database/db');
 const promisify = require('util');
 const { query } = require('express');
+var multer = require('multer');
+var fecha = Date.now();
+
+var rutaAlmacen = multer.diskStorage(
+    {
+        destination:function(request, file, callback){
+            callback(null, './public/images/');
+        },
+        filename:function(request, file, callback){
+            console.log(file);
+            callback(null, `${fecha}_${file.originalname}`);
+        }
+    }
+);
+
+var cargar = multer({storage:rutaAlmacen});
 
 //metodo para registrar
 exports.register =  (req, res) => {
