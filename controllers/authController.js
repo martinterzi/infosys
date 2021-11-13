@@ -44,7 +44,7 @@ exports.addChofer =  (req, res) => {
         
         
         conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic, vtopsico: vtopsico, 
-            vtopel: vtopel, nt:nt, fdni:fdni, fn:fn, domicilio:domicilio, vtog:vtog, cuil:cuil, imagen:imagen }, (err, result) => {
+            vtopel: vtopel, nt:nt, fdni:fdni, fn:fn, domicilio:domicilio, vtog:vtog, cuil:cuil, archivo:imagen }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
