@@ -50,7 +50,7 @@ router.get('/addUnidad',(req, res) => {
 //ruta de metodos 
 
 router.post('/register', authController.register);
-router.post('/addChofer', cargar.single("imagen"), authController.addChofer);
+router.post('/addChofer', cargar.single("archivo"), authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
 router.post('/login', authController.login);
 router.get('/searchResult', authController.buscar);
