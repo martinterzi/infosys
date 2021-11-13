@@ -10,11 +10,11 @@ var fecha = Date.now();
 var rutaAlmacen = multer.diskStorage(
     {
         destination:function(request, file, callback){
-            callback(null, 'infosys/public/images/');
+            callback(null, './public/images/');
         },
         filename:function(request, file, callback){
             console.log(file);
-            callback(null, fecha+"_"+file.originalname);
+            callback(null, `${fecha}_${file.originalname}`);
         }
     }
 );
