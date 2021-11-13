@@ -1,24 +1,27 @@
 const express = require('express');
 const router = express.Router();
-var multer = require('multer');
-var fecha = Date.now();
 const conexion = require('../database/db');
 
 const authController = require('../controllers/authController');
 
+var multer = require('multer');
+var fecha = Date.now();
+
 var rutaAlmacen = multer.diskStorage(
     {
-        destination:function (request, file, callback){
-          callback(null,'./public/images/')
+        destination:function(request, file, callback){
+            callback(null, './public/images/');
         },
         filename:function(request, file, callback){
-          console.log(file);
-          callback(null, fecha+"_"+file.originalname)
-       }
+            console.log(file);
+            callback(null, fecha+"_"+file.originalname);
+        }
     }
-    
 );
+
 var cargar = multer({storage:rutaAlmacen});
+/* GET home page. */
+
 
 router.get('/', (req, res) => {
     
@@ -47,7 +50,7 @@ router.get('/addUnidad',(req, res) => {
 //ruta de metodos 
 
 router.post('/register', authController.register);
-router.post('/addChofer', cargar.single("archivo"), authController.addChofer);
+router.post('/addChofer', cargar.single("imagen"), authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
 router.post('/login', authController.login);
 router.get('/searchResult', authController.buscar);

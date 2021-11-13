@@ -40,11 +40,11 @@ exports.addChofer =  (req, res) => {
         const domicilio = req.body.domicilio;
         const vtog = req.body.vtog;
         const cuil = req.body.cuil;
-        //const archivo = req.body.archivo;
+        const images = req.body.images;
         
         
         conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic, vtopsico: vtopsico, 
-            vtopel: vtopel, nt:nt, fdni:fdni, fn:fn, domicilio:domicilio, vtog:vtog, cuil:cuil }, (err, result) => {
+            vtopel: vtopel, nt:nt, fdni:fdni, fn:fn, domicilio:domicilio, vtog:vtog, cuil:cuil, images:images }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
                 console.log(err);
