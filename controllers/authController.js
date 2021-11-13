@@ -40,7 +40,7 @@ exports.addChofer =  (req, res) => {
         const domicilio = req.body.domicilio;
         const vtog = req.body.vtog;
         const cuil = req.body.cuil;
-        const archivo = req.body.archivo;
+        const archivo = req.file.filename;
         
         
         conDb.query('INSERT INTO choferes SET ?', {nombre: name, dni: dni, vtolic: vtolic, vtopsico: vtopsico, 
