@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>choferesind</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
@@ -50,10 +49,10 @@
                             <td><%=chof.vtolic %></td>
                             <td><%=chof.vtopsico %></td>
                             <td><%=chof.vtopel %></td>
-                            <td class="acciones gap-1">
-                                <a href="/choferMas/<%=user.id %>" class="btn-sm btn-primary ">+INFO</a>
-                                <a href="/choferEdit/<%=user.id %>" class="btn-sm btn-primary ">EDITAR</a>
-                                <a href="/choferEliminar/<%=user.id %>" class="btn-sm btn-primary ">ELIMINAR</a>
+                            <td class="acciones gap-1"> 
+                                <a href="/choferMas/<%=chof.id %>" class="btn-sm btn-primary">MAS INFO</a>
+                                <a href="/choferEdit/<%=chof.id %>" class="btn-sm btn-primary">EDITAR</a>
+                                <a href="/choferEliminar/<%=chof.id %>" class=" btn-sm  btn-primary">ELIMINAR</a>
                             </td>
                         </tr>
                         <% }) %>
