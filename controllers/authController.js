@@ -12,7 +12,7 @@ exports.register =  (req, res) => {
         const name = req.body.name;
         const user = req.body.user;
         const pass = req.body.pass;
-        let passHash = await bcryptjs.hash(pass, 8);
+        let passHash =  bcryptjs.hash(pass, 8);
         
         console.log(passHash);
         /*
