@@ -8,12 +8,12 @@ const { query } = require('express');
 
 //metodo para registrar
 exports.register =  (req, res) => {
-    try {
+   
         const name = req.body.name;
         const user = req.body.user;
         const pass = req.body.pass;
-       let passHash = await bcryptjs.hash(pass, 8);
-        console.log(name + user + pass);
+        let passHash = await bcryptjs.hash(pass, 8);
+        
         console.log(passHash);
         /*
         conDb.query('INSERT INTO users SET ?', { user: user, name: name, pass: pass }, (err, result) => {
@@ -23,9 +23,7 @@ exports.register =  (req, res) => {
             }
             res.redirect('/');
         })*/
-    } catch (error) {
-        console.log(error);
-    }
+    
 
 };
 
