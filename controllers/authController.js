@@ -12,9 +12,9 @@ exports.register =  (req, res) => {
         const name = req.body.name;
         const user = req.body.user;
         const pass = req.body.pass;
-       // let passHash = await bcryptjs.hash(pass, 8);
+        let passHash = await bcryptjs.hash(pass, 8);
         console.log(name + user + pass);
-      //  console.log(passHash);
+        console.log(passHash);
         conDb.query('INSERT INTO users SET ?', { user: user, name: name, pass: pass }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
