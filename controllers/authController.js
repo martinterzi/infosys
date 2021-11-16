@@ -7,15 +7,14 @@ const { query } = require('express');
 
 
 //metodo para registrar
-exports.register = async (req, res) => {
-    
+exports.register =  (req, res) => {
+    try {
         const name = req.body.name;
         const user = req.body.user;
         const pass = req.body.pass;
-        let passHash = await bcryptjs.hash(pass, 8);
-       // console.log(name + user + pass);
-        console.log(passHash);
-        /*
+      //  let passHash = await bcryptjs.hash(pass, 8);
+        console.log(name + user + pass);
+       // console.log(passHash);
         conDb.query('INSERT INTO users SET ?', { user: user, name: name, pass: pass }, (err, result) => {
             // si hay error al ingresar user muestra en consola, sino redirecciona a index
             if (err) {
@@ -23,7 +22,9 @@ exports.register = async (req, res) => {
             }
             res.redirect('/');
         })
-   */
+    } catch (error) {
+        console.log(error);
+    }
 
 };
 
