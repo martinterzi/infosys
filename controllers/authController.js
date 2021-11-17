@@ -105,7 +105,7 @@ exports.login =  (req, res) => {
                 const token = jwt.sign(payload, 'process.env.JWT_SECRETO',{
                     expiresIn:'7d'
                 });
-                console.log(token);
+                //console.log(token);
               
                 res.render('index');
             }
