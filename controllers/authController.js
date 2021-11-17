@@ -99,6 +99,13 @@ exports.login =  (req, res) => {
                 console.log('pass incorrecto')
             } else {
                 console.log('pass ok')
+                const payload = {
+                    check: true
+                }
+                const token = jwt.sign(payload, 'process.env.JWT_SECRETO',{
+                    expiresIn:'7d'
+                });
+                console.log(token);
               
                 res.render('index');
             }
