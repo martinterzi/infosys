@@ -1,14 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const conexion = require('../database/db');
+const verificacion = express.Router();
 
 const authController = require('../controllers/authController');
 
+verificacion.use((req, res, next)=>{
+    let token= req.headers['x-access-token']|| req.headers['authorization'];
+    console.log(token);
+})
 
 
 
-
-router.get('/', (req, res) => {
+router.get('/',verificacion, (req, res) => {
     
     res.render('index');
 });
