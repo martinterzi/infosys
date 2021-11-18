@@ -32,7 +32,10 @@ router.get('/addUnidad',(req, res) => {
     res.render('addUnidad');
 });
 
-
+router.get('/consultas', (req, res) => {
+    
+    res.render('consultas');
+});
 
 
 
