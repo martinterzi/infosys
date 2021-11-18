@@ -37,6 +37,10 @@ router.get('/consultas', (req, res) => {
     res.render('consultas');
 });
 
+router.post('/email', (req, res) => {
+    console.log(req.body)
+
+});
 
 
 //ruta de metodos 
