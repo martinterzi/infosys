@@ -42,7 +42,7 @@ router.post('/register', authController.register);
 router.post('/addChofer', authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
 router.post('/login', authController.login);
-router.get('/searchResult', authController.buscar);
+router.get('/searchResult',verificacion, authController.buscar);
 router.get('/searchResultU', authController.buscarU);
 router.post('/searchind', authController.buscarInd);
 router.get('/choferMas/:id', authController.choferMas);
