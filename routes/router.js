@@ -12,7 +12,7 @@ verificacion.use((req, res, next)=>{
 
 
 
-router.get('/',verificacion, (req, res) => {
+router.get('/', (req, res) => {
     
     res.render('index');
 });
@@ -42,7 +42,7 @@ router.post('/register', authController.register);
 router.post('/addChofer', authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);
 router.post('/login', authController.login);
-router.get('/searchResult',verificacion, authController.buscar);
+router.get('/searchResult', authController.buscar);
 router.get('/searchResultU', authController.buscarU);
 router.post('/searchind', authController.buscarInd);
 router.get('/choferMas/:id', authController.choferMas);
