@@ -51,7 +51,7 @@ router.post('/email', (req, res) => {
     <p>${mensaje}</p>
     `;
     const transporte = nodemailer.createTransport("SMPT",{
-        host:"smtp-mail.outlook.com",
+        Host:"smtp-mail.outlook.com",
         port:587,
         secure:false,
         tls:{
