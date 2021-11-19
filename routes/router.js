@@ -38,7 +38,7 @@ router.get('/consultas', (req, res) => {
 });
 
 router.post('/email', (req, res) => {
-    const {name, email, cel, menssaje}= req.body;
+    const {name, email, cel, mensaje}= req.body;
     contentHTML =`
     <h1>user information</h1>
     <ul>
@@ -46,8 +46,9 @@ router.post('/email', (req, res) => {
         <li>User email: ${email}</li>
         <li>Celular: ${cel}</li>
     </ul>
+    <p>${mensaje}</p>
     `;
-    console.log(contentHTML)
+    console.log(contentHTML);
     
     
 
