@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const conexion = require('../database/db');
 const verificacion = express.Router();
+const nodemailer = require('nodemailer');
 
 const authController = require('../controllers/authController');
+const { text } = require('express');
 
 verificacion.use((req, res, next)=>{
     let token= req.headers['x-access-token']|| req.headers['authorization'];
@@ -48,10 +50,30 @@ router.post('/email', (req, res) => {
     </ul>
     <p>${mensaje}</p>
     `;
-    console.log(contentHTML);
-    
-    
-
+    const transporte = nodemailer.createTransport({
+        host:'smtp.live.com',
+        port:'587',
+        secure:'false',
+        auth:{
+            user:'acquatransfal@hotmail.com',
+            pass:'Cris2020'
+        }
+    });
+    var mailOptions={
+      from:"acquatransfal@hotmail.com",
+      to:`${email}`,
+      subject:"nn",
+      text:`${mensaje}`
+    };
+    transporte.sendMail(mailOptions, (error, info)=>{
+        if (error) {
+            res.status(500).send(error.message);
+        }
+        else{
+            console.log('enviado con exito');
+            res.status(200).send(req.body);
+        }
+    })
 });
 
 
