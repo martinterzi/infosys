@@ -55,12 +55,12 @@ router.post('/email', (req, res) => {
         port:'587',
         secure:'false',
         auth:{
-            user:'acquatransfal@hotmail.com',
+            user:'acquatransfal@hotmail.com.ar',
             pass:'Cris2020'
         }
     });
     var mailOptions={
-      from:"acquatransfal@hotmail.com",
+      from:"acquatransfal@hotmail.com.ar",
       to:`${email}`,
       subject:"nn",
       text:`${mensaje}`
