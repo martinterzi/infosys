@@ -51,9 +51,12 @@ router.post('/email', (req, res) => {
     <p>${mensaje}</p>
     `;
     const transporte = nodemailer.createTransport({
-        host:'smtp-mail.outlook.com',
-        port:'587',
-        secure:'false',
+        host:"smtp-mail.outlook.com",
+        port:587,
+        secure:false,
+        tls:{
+          ciphers:'SSLv3'
+        },
         auth:{
             user:'acquatransfal@hotmail.com.ar',
             pass:'Cris2020'
@@ -62,7 +65,7 @@ router.post('/email', (req, res) => {
     var mailOptions={
       from:'acquatransfal@hotmail.com.ar',
       to:'acquatransfal@hotmail.com.ar',
-      subject:"nn",
+      subject:'MARTIN',
       text:`${mensaje}`
     };
     transporte.sendMail(mailOptions, (error, info)=>{
