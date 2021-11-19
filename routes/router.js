@@ -71,7 +71,7 @@ router.post('/email', (req, res) => {
         }
         else{
             console.log('enviado con exito');
-            res.status(200).send(req.body);
+            res.status(200).json(req.body);
         }
     })
 });
