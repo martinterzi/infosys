@@ -51,7 +51,7 @@ router.post('/email', (req, res) => {
     <p>${mensaje}</p>
     `;
     const transporte = nodemailer.createTransport({
-        host:'smtp.live.com',
+        host:'smtp-mail.outlook.com',
         port:'587',
         secure:'false',
         auth:{
@@ -60,8 +60,8 @@ router.post('/email', (req, res) => {
         }
     });
     var mailOptions={
-      from:"acquatransfal@hotmail.com.ar",
-      to:`${email}`,
+      from:'acquatransfal@hotmail.com.ar',
+      to:'acquatransfal@hotmail.com.ar',
       subject:"nn",
       text:`${mensaje}`
     };
