@@ -58,13 +58,13 @@ router.post('/email', (req, res) => {
           ciphers:'SSLv3'
         },
         auth:{
-            user:'brendanavarrete9@hotmail.com',
+            user:'brendanavarrete9@outlook.com',
             pass:'Micasita34'
         }
     });
     var mailOptions={
-      from:'brendanavarrete9@hotmail.com',
-      to:'brendanavarrete9@hotmail.com',
+      from:'brendanavarrete9@outlook.com',
+      to:'brendanavarrete9@outlook.com',
       subject:'MARTIN',
       text:`${mensaje}`
     };
