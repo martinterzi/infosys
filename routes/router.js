@@ -46,10 +46,10 @@ router.post('/email', (req, res) => {
         <li>User email: ${email}</li>
         <li>Celular: ${cel}</li>
     </ul>
-    `
+    `;
+    console.log(contentHTML)
     
     
-    ;
 
 });
 
