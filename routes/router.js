@@ -3,7 +3,7 @@ const router = express.Router();
 const conexion = require('../database/db');
 const verificacion = express.Router();
 const nodemailer = require('nodemailer');
-
+require('dotenv').config({path:'../env/.env'});
 const authController = require('../controllers/authController');
 const { text } = require('express');
 
