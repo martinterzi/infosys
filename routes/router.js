@@ -51,7 +51,7 @@ router.post('/email', (req, res) => {
     <p>${mensaje}</p>
     `;
     var transporte = nodemailer.createTransport({
-        host: "smtp.ethereal.emai",
+        host: "smtp.ethereal.email",
         post: 587,
         secure: false,
         auth: {
