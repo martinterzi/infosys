@@ -51,18 +51,17 @@ router.post('/email', (req, res) => {
     <p>${mensaje}</p>
     `;
     var transporte = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        puerto: 587,
+        host: process.env.EMAIL_HOST,
+        puerto: process.env.EMAIL_PORT,
         secure: false,
         auth: {
-            type: "login",
-            usuario: "selena.johnson12@ethereal.email",
-            pass: "UtSPGdAKegqzW8n7Cw"
+            usuario: process.env.EMAIL_USUARIO,
+            pass: process.env.EMAIL_PASS
         }
     });
     var mailOptions = {
         from: "Remitente",
-        to: "selena.johnson12@ethereal.email",
+        to: process.env.EMAIL_USUARIO, 
         subject: "MARTIN",
         text: "hola"
     };
