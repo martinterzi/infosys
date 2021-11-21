@@ -55,14 +55,14 @@ router.post('/email', (req, res) => {
         puerto: 587,
         secure: false,
         auth: {
-            usuario: 'selena.johnson12@ethereal.email',
-            pase: 'UtSPGdAKegqzW8n7Cw'
+            usuario: "selena.johnson12@ethereal.email",
+            pase: "UtSPGdAKegqzW8n7Cw"
         }
     });
     var mailOptions = {
         from: "Remitente",
-        to: 'martin.terzi@acquappessa.com.ar',
-        subject: 'MARTIN',
+        to: "selena.johnson12@ethereal.email",
+        subject: "MARTIN",
         text: `${mensaje}`
     };
     transporte.sendMail(mailOptions, (error, info) => {
