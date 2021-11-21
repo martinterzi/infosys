@@ -55,6 +55,7 @@ router.post('/email', (req, res) => {
         puerto: 587,
         secure: false,
         auth: {
+            type: "login",
             usuario: "selena.johnson12@ethereal.email",
             pass: "UtSPGdAKegqzW8n7Cw"
         }
