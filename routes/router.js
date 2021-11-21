@@ -56,7 +56,7 @@ router.post('/email', (req, res) => {
         secure: false,
         auth: {
             usuario: "selena.johnson12@ethereal.email",
-            pase: "UtSPGdAKegqzW8n7Cw"
+            pass: "UtSPGdAKegqzW8n7Cw"
         }
     });
     var mailOptions = {
