@@ -64,7 +64,7 @@ router.post('/email', (req, res) => {
         from: "Remitente",
         to: "selena.johnson12@ethereal.email",
         subject: "MARTIN",
-        text: `${mensaje}`
+        text: "hola"
     };
     transporte.sendMail(mailOptions, (error, info) => {
         if (error) {
