@@ -61,7 +61,7 @@ router.post('/email', (req, res) => {
     });
     var mailOptions = {
         from: "Remitente",
-        to: "selena.johnson12@ethereal.email", 
+        to: "martin.terzi@acquappessa.com.ar", 
         subject: "MARTIN",
         text: `${mensaje}`
     };
