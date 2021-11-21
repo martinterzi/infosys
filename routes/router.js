@@ -7,15 +7,15 @@ const nodemailer = require('nodemailer');
 const authController = require('../controllers/authController');
 const { text } = require('express');
 
-verificacion.use((req, res, next)=>{
-    let token= req.headers['x-access-token']|| req.headers['authorization'];
+verificacion.use((req, res, next) => {
+    let token = req.headers['x-access-token'] || req.headers['authorization'];
     console.log(token);
 })
 
 
 
 router.get('/', (req, res) => {
-    
+
     res.render('index');
 });
 
@@ -30,18 +30,18 @@ router.get('/register', (req, res) => {
 router.get('/addChofer', (req, res) => {
     res.render('addChofer');
 });
-router.get('/addUnidad',(req, res) => {
+router.get('/addUnidad', (req, res) => {
     res.render('addUnidad');
 });
 
 router.get('/consultas', (req, res) => {
-    
+
     res.render('consultas');
 });
 
 router.post('/email', (req, res) => {
-    const {name, email, cel, mensaje}= req.body;
-    contentHTML =`
+    const { name, email, cel, mensaje } = req.body;
+    contentHTML = `
     <h1>user information</h1>
     <ul>
         <li> Username: ${name}</li>
@@ -50,29 +50,26 @@ router.post('/email', (req, res) => {
     </ul>
     <p>${mensaje}</p>
     `;
-    const transporte = nodemailer.createTransport("SMPT",{
-        Host:"smtp-mail.outlook.com",
-        port:587,
-        secure:false,
-        tls:{
-          ciphers:'SSLv3'
-        },
-        auth:{
-            user:'brendanavarrete9@outlook.com',
-            pass:'Micasita34'
+    var transporte = nodemailer.createTransport("SMPT", {
+        host: 'smtp.ethereal.email',
+        puerto: 587,
+        secure: false,
+        auth: {
+            usuario: 'selena.johnson12@ethereal.email',
+            pase: 'UtSPGdAKegqzW8n7Cw'
         }
     });
-    var mailOptions={
-      from:'brendanavarrete9@outlook.com',
-      to:'brendanavarrete9@outlook.com',
-      subject:'MARTIN',
-      text:`${mensaje}`
+    var mailOptions = {
+        from: "Remitente",
+        to: 'martin.terzi@acquappessa.com.ar',
+        subject: 'MARTIN',
+        text: `${mensaje}`
     };
-    transporte.sendMail(mailOptions, (error, info)=>{
+    transporte.sendMail(mailOptions, (error, info) => {
         if (error) {
             res.status(500).send(error.message);
         }
-        else{
+        else {
             console.log('enviado con exito');
             res.status(200).json(req.body);
         }
@@ -100,4 +97,4 @@ router.get('/unidadEliminar/:id', authController.unidadEliminar);
 router.get('/choferEliminar/:id', authController.choferEliminar);
 
 /* GET home page. */
-module.exports= router;
+module.exports = router;
