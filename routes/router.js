@@ -3,7 +3,7 @@ const router = express.Router();
 const conexion = require('../database/db');
 const verificacion = express.Router();
 const nodemailer = require('nodemailer');
-require('dotenv').config({path:'../env/.env'});
+
 const authController = require('../controllers/authController');
 const { text } = require('express');
 
@@ -51,17 +51,17 @@ router.post('/email', (req, res) => {
     <p>${mensaje}</p>
     `;
     var transporte = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST,
-        puerto: process.env.EMAIL_PORT,
+        host: "smtp.ethereal.emai",
+        post: 587,
         secure: false,
         auth: {
-            usuario: process.env.EMAIL_USUARIO,
-            pass: process.env.EMAIL_PASS
+            user: "selena.johnson12@ethereal.email",
+            pass: "UtSPGdAKegqzW8n7Cw"
         }
     });
     var mailOptions = {
         from: "Remitente",
-        to: process.env.EMAIL_USUARIO, 
+        to: "selena.johnson12@ethereal.email", 
         subject: "MARTIN",
         text: "hola"
     };
