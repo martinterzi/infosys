@@ -397,8 +397,8 @@ exports.enviarEmail =  (req, res) => {
                 console.log('enviado con exito');
              
                 console.log(req.body.name);
-                //res.status(200).json(req.body);
-                res.render('emailEnviado', {nombre:req.body.name});
+                res.status(200).json(req.body);
+                
             }
         })
     
