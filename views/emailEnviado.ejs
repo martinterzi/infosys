@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="/email" method="post">
-                            <% info.forEach((infos)=> {%>
+                            <% if(infos)=> {%>
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" autofocus placeholder="name">
                             </div>
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <textarea name="mensaje" class="form-control" rows="2" placeholder="Escriba su mensaje"></textarea>
                             </div>
-                            <% }) %>
+                            <% } %>
                             <button class="btn btn-primary btn-block">
                                 Enviar
                             </button>
