@@ -79,6 +79,10 @@ router.post('/email', (req, res) => {
     })
 });
 
+router.get('/emailEnviado', (req, res) => {
+
+    res.render('emailEnviado');
+});
 
 //ruta de metodos 
 
