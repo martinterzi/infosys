@@ -32,12 +32,12 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="/email" method="post">
-                            <% results.forEach((unid)=> {%>
+                            <% info.forEach((infos)=> {%>
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" autofocus placeholder="name">
                             </div>
                             <tr>
-                                <td><%=unid.email %></td>
+                                <td><%=infos.email %></td>
                                
                             </tr>
                             <div class="form-group">
