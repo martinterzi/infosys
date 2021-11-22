@@ -31,29 +31,16 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/emailEnviado" method="post">
+                        
                             <% if(nombre)=> {%>
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" autofocus placeholder="name">
-                            </div>
+                           
                             <tr>
                                 <td><%=nombre %></td>
                                
                             </tr>
-                            <div class="form-group">
-                                <input type="text" name="email" class="form-control" autofocus placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="cel" class="form-control" autofocus placeholder="cel">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="mensaje" class="form-control" rows="2" placeholder="Escriba su mensaje"></textarea>
-                            </div>
+                           
                             <% } %>
-                            <button class="btn btn-primary btn-block">
-                                Enviar
-                            </button>
-                        </form>
+                           
                     </div>
                 </div>
             </div>

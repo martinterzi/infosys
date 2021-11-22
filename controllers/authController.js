@@ -395,7 +395,7 @@ exports.enviarEmail =  (req, res) => {
             }
             else {
                 console.log('enviado con exito');
-                console.log(`${name}`);
+             
                 console.log(req.body.name);
                 //res.status(200).json(req.body);
                 res.render('emailEnviado', {nombre:req.body.name});
