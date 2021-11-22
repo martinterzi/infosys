@@ -32,12 +32,12 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="/email" method="post">
-                            <% if(infos)=> {%>
+                            <% if(nombre)=> {%>
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" autofocus placeholder="name">
                             </div>
                             <tr>
-                                <td><%=infos.email %></td>
+                                <td><%=nombre %></td>
                                
                             </tr>
                             <div class="form-group">

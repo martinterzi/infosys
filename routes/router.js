@@ -74,7 +74,7 @@ router.post('/email', (req, res) => {
             console.log(`${name}`);
             console.log(req.body.name);
             //res.status(200).json(req.body);
-            //res.render('emailEnviado', {:});
+            res.render('emailEnviado', {nombre:`${name}`});
         }
     })
 });
