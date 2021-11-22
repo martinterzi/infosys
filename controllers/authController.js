@@ -363,7 +363,7 @@ exports.unidadMas =  (req, res) => {
 };
 
 exports.enviarEmail =  (req, res) => {
-    
+        var check = true;
         const { name, email, cel, mensaje } = req.body;
         contentHTML = `
         <h1>user information</h1>
@@ -392,15 +392,19 @@ exports.enviarEmail =  (req, res) => {
         transporte.sendMail(mailOptions, (error, info) => {
             if (error) {
                 res.status(500).send(error.message);
+                check= false;
             }
             else {
                 console.log('enviado con exito');
-             
+                check=true;
                 console.log(req.body.name);
                 res.status(200).json(req.body);
                 
             }
         })
+        if (check) {
+            res.render('emailEnviado');
+        }
     
    
  
