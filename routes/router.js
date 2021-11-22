@@ -6,12 +6,12 @@ const nodemailer = require('nodemailer');
 
 const authController = require('../controllers/authController');
 const { text } = require('express');
-
+/*
 verificacion.use((req, res, next) => {
     let token = req.headers['x-access-token'] || req.headers['authorization'];
     console.log(token);
 })
-
+*/
 
 
 router.get('/', (req, res) => {
