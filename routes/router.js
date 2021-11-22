@@ -38,7 +38,7 @@ router.get('/consultas', (req, res) => {
 
     res.render('consultas');
 });
-
+/*
 router.post('/email', (req, res) => {
     const { name, email, cel, mensaje } = req.body;
     contentHTML = `
@@ -78,7 +78,7 @@ router.post('/email', (req, res) => {
         }
     })
 });
-
+*/
 router.get('/emailEnviado', (req, res) => {
 
     res.render('emailEnviado');
@@ -86,6 +86,7 @@ router.get('/emailEnviado', (req, res) => {
 
 //ruta de metodos 
 
+router.post('/enviarEmail', authController.enviarEmail);
 router.post('/register', authController.register);
 router.post('/addChofer', authController.addChofer);
 router.post('/addUnidad', authController.addUnidad);

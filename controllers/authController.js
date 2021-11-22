@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 const bcryptjs = require('bcryptjs');
-
+const nodemailer = require('nodemailer');
 const conDb = require('../database/db');
 const promisify = require('util');
 const { query } = require('express');
-
+const { text } = require('express');
 
 //metodo para registrar
 exports.register =  (req, res) => {
@@ -358,6 +358,50 @@ exports.unidadMas =  (req, res) => {
     } catch (error) {
         console.log(error)
     }
+   
+ 
+};
+
+exports.enviarEmail =  (req, res) => {
+    
+        const { name, email, cel, mensaje } = req.body;
+        contentHTML = `
+        <h1>user information</h1>
+        <ul>
+            <li> Username: ${name}</li>
+            <li>User email: ${email}</li>
+            <li>Celular: ${cel}</li>
+        </ul>
+        <p>${mensaje}</p>
+        `;
+        var transporte = nodemailer.createTransport({
+            host: "smtp.ethereal.email",
+            post: 587,
+            secure: false,
+            auth: {
+                user: "selena.johnson12@ethereal.email",
+                pass: "UtSPGdAKegqzW8n7Cw"
+            }
+        });
+        var mailOptions = {
+            from: `${email}`,
+            to: "selena.johnson12@ethereal.email", 
+            subject: "CONSULTA",
+            text: `${mensaje}`
+        };
+        transporte.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                res.status(500).send(error.message);
+            }
+            else {
+                console.log('enviado con exito');
+                console.log(`${name}`);
+                console.log(req.body.name);
+                //res.status(200).json(req.body);
+                res.render('emailEnviado', {nombre:`${name}`});
+            }
+        })
+    
    
  
 };
