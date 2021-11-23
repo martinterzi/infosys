@@ -403,7 +403,7 @@ exports.enviarEmail =  (req, res) => {
             }
         })
         if (check) {
-            res.render('emailEnviado');
+            res.render('emailEnviado', {name:req.body.name});
         }
     
    

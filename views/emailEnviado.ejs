@@ -32,7 +32,14 @@
                 <div class="card">
                     <div class="card-body">
                         
-                          
+                        <% if (name) { %>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name"
+                                    value="<%= name %>" placeholder="">
+                                <label for="name">NOMBRE</label>
+                            </div>
+
+                        <% } %>
                            
                     </div>
                 </div>
